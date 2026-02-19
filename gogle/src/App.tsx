@@ -1,47 +1,39 @@
-import styled from 'styled-components'
-import './App.css'
+import { Flex } from '@mantine/core'
+import './App.css'  
+import { Superdiv,Topbar,BottomBar,BarLink, AppsDiv, Apps, UserButton, SearchDiv } from './Styles/gogle.ts'
 
 function gogle() {
-
-  const Superdiv = styled.div`
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  `
-  const Topbar = styled.div`
-      display: flex;
-      height: 13vh;
-      width: 100%;
-      top:0;
-      z-index: 1000;
-      background-color: #1a73e8;
-
-      justify-content: flex-end;
-      align-items: center;
-      
-      gap: 1rem;
-      `
-
-  const TopBarLink = styled.h1`
-    color: #ffffff;
-    font-size: 0.8rem;
-    text-align: center;
-
-    &:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    }
-  `
     
   return (
     <Superdiv> 
+
     <Topbar>  
-      <TopBarLink>Gmail</TopBarLink>
-      <TopBarLink>Images</TopBarLink>
+      <BarLink>Gmail</BarLink>
+      <BarLink>Images</BarLink>
+
+      <AppsDiv>
+        <Apps src="apps.svg" alt="Apps" />
+      </AppsDiv>
+
+      <UserButton src="Trollface.png" alt="User" />
     </Topbar>
+
+    <SearchDiv>
+        <img src="Google_logo.svg" alt="Google Logo" style={{ width: '500px', height: '200px', display: 'flex'}} />
+        <input type="text" />
+    </SearchDiv>
+
+    <BottomBar>
+      <BarLink>About</BarLink>
+      <BarLink>Advertising</BarLink>
+      <BarLink>Business</BarLink>
+      <BarLink>How Search works</BarLink>
+      <BarLink>Privacy </BarLink>
+      <BarLink>Terms</BarLink>
+      <BarLink>Settings</BarLink>
+    </BottomBar>
+
+
     </Superdiv>
   )
 }
